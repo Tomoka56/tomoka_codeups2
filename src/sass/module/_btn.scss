@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .btn {
-  display: block;
+  display: inline-block;
   max-width: rem(202);
   width: 100%;
   position: relative;
@@ -10,12 +10,12 @@
 
 .btn::after {
   display: block;
+  content: '';
   background: $white;
   border: rem(1) solid $green2;
   position: absolute;
   top: rem(4);
   right: rem(-4);
-  content: '';
   width: 100%;
   height: 100%;
   border: 1px solid $green2;

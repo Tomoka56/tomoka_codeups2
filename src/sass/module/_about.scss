@@ -3,6 +3,23 @@
 .about {
   position: relative;
 }
+
+.about::after {
+  @include mq('md') {
+    display: block;
+    content: "";
+    position: absolute;
+    width: rem(194);
+    height: rem(181);
+    background-image: url(/assets/images/common/bg_icon1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: calc(50% - min(50%, rem(640)));
+    bottom: rem(-90);
+    z-index: 10;
+  }
+}
+
 .about__inner{
   margin-top: rem(27);
   @include mq('md') {
@@ -10,6 +27,7 @@
     margin-top: initial;
   }
 }
+
 
 .about__content {
   margin-top: rem(54);

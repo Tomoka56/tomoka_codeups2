@@ -63,15 +63,15 @@ jQuery(function ($) {
               delay: 2500,
             },
           });
-          $('.fv__btn,.loading__mask').addClass('is-hidden');
-          $('.header').addClass('color');
+          $('.js-btn,.js-mask').addClass('is-hidden');
+          $('.js-header').addClass('color');
         }, 8000); // 遅延時間
       });
   }else{
     // 2回目アクセスの処理
     $(document).ready(function() {
     $('.js-loading').hide();
-    $('.fv__btn,.loading__mask').addClass('is-hidden');
+    $('.js-btn,.js-mask').addClass('is-hidden');
     setTimeout(function() {
       const swiper1 = new Swiper(".fv__slider", {
         loop: true,
@@ -80,7 +80,7 @@ jQuery(function ($) {
           delay: 2500,
         },
       });
-      $('.header').addClass('color');
+      $('.js-header').addClass('color');
     }, 4000); // 遅延時間
   });
 
@@ -95,7 +95,7 @@ $('.js-hamburger,.sp-nav__item a').click(function(event) {
     $(".js-header").toggleClass("is-open");
     $(".js-drawer").toggleClass("is-open");
     $(".js-drawer").fadeIn();
-    $('body').css('overflow', 'hidden'); // 背景のスクロールを無効に
+    $('.top').toggleClass('is-hidden'); // 背景のスクロールを無効に
 
   });
 

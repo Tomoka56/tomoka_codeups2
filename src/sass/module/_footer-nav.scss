@@ -36,7 +36,7 @@
 
 .footer-nav__wrapper:last-child .footer-nav__block:last-child {
   @include mq('md') {
-    // margin-top: rem(-9);
+    margin-top: rem(-9);
   }
 }
 

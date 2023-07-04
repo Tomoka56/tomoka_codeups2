@@ -5,6 +5,38 @@
   z-index: -20;
 }
 
+.blog::before {
+  @include mq('md') {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 60.4%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    background-image: url(/assets/images/common/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.blog::after {
+  @include mq('md') {
+      content: "";
+      display: block;
+      position: absolute;
+      width: rem(437);
+      height: rem(201);
+      background-image: url(/assets/images/common/bg_icon2.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: rem(22);
+      left: calc(50% - min(50%, rem(620)));
+      z-index: -1;
+  }
+}
+
 .blog__container {
   margin-top: rem(26);
   @include mq('md') {
@@ -26,22 +58,6 @@
 .blog__inner.inner {
   padding-left: rem(21);
   padding-right: rem(21);
-}
-
-.blog__container::before {
-  @include mq('md') {
-      content: "";
-      display: block;
-      position: absolute;
-      width: rem(437);
-      height: rem(201);
-      background-image: url(/assets/images/common/bg_icon2.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      top: rem(-220);
-      left: calc(50% - min(50vw, 620px));
-      z-index: 1;
-  }
 }
 
 .blog__cards {
