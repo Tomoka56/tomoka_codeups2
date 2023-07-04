@@ -49,49 +49,56 @@ jQuery(function ($) {
 
   let $i = check_access();
   if($i == 0){
-
-      $(document).ready(function() {
-        $('.js-loading').delay(3000).fadeOut(2000);
-      });
     // 1回目アクセスの処理
+    $(document).ready(function() {
+      $('.js-loading').delay(3000).fadeOut(2000);
+      });
+      $(document).ready(function() {
+        setTimeout(function() {
+          // fvスライダー
+          const swiper1 = new Swiper(".fv__slider", {
+            loop: true,
+            speed: 1800,
+            autoplay: {
+              delay: 2500,
+            },
+          });
+          $('.fv__btn,.loading__mask').addClass('is-hidden');
+          $('.header').addClass('color');
+        }, 8000); // 遅延時間
+      });
   }else{
     // 2回目アクセスの処理
     $(document).ready(function() {
     $('.js-loading').hide();
+    $('.fv__btn,.loading__mask').addClass('is-hidden');
+    setTimeout(function() {
+      const swiper1 = new Swiper(".fv__slider", {
+        loop: true,
+        speed: 1800,
+        autoplay: {
+          delay: 2500,
+        },
+      });
+      $('.header').addClass('color');
+    }, 4000); // 遅延時間
   });
 
   }
 })
 
-
-
 // ハンバーガーメニュー/ドロワーメニュー
 $('.js-hamburger,.sp-nav__item a').click(function(event) {
-    event.preventDefault(); // デフォルトの挙動を防止する
-    // メニューを開く処理
+    event.preventDefault(); // デフォルトの挙動を防止
+    // メニューを開く
     $(".js-bar").toggleClass("is-active");
     $(".js-header").toggleClass("is-open");
     $(".js-drawer").toggleClass("is-open");
     $(".js-drawer").fadeIn();
-    // $(".top").addClass("is-fixed");
-    $('body').css('overflow', 'hidden'); // 背景のスクロールを無効にする
+    $('body').css('overflow', 'hidden'); // 背景のスクロールを無効に
 
   });
 
-  // fvスライダー
-  $(document).ready(function() {
-    setTimeout(function() {
-      const swiper1 = new Swiper(".fv__slider", {
-        loop: true,
-        speed: 2000,
-        autoplay: {
-          delay: 2500,
-        },
-      });
-      $('.fv__btn,.loading__mask').addClass('is-hidden');
-      $('.header').addClass('color');
-    }, 8000); // ランダムな遅延時間を追加
-  });
 
   // キャンペーンスライダー
   const swiper2 = new Swiper(".campaign__slider", {
@@ -148,28 +155,28 @@ $(window).on("scroll", function() {
     return false;
   });
 
-  // 背景色が伸びてテキストを表示
+  // 背景色が伸びて画像を表示
   function BgFadeAnime(){
-    $('.bgRLextendTrigger').each(function(){
+    $('.js-extend').each(function(){
       let elemPos = $(this).offset().top-50;
       let scroll = $(window).scrollTop();
       let windowHeight = $(window).height();
       if (scroll >= elemPos - windowHeight){
-        $(this).addClass('bgRLextend');
+        $(this).addClass('extend');
       }else{
-        $(this).removeClass('bgRLextend');
+        $(this).removeClass('extend');
       }
     });
 
-    // 文字列を囲う子要素
-    $('.bgappearTrigger').each(function(){
+    // 画像を囲う子要素
+    $('.js-wrapper').each(function(){
       var elemPos = $(this).offset().top-50;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
       if (scroll >= elemPos - windowHeight){
-        $(this).addClass('bgappear');
+        $(this).addClass('wrap');
       }else{
-        $(this).removeClass('bgappear');
+        $(this).removeClass('wrap');
       }
     });
   }

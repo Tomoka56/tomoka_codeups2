@@ -24,7 +24,8 @@
   @include mq('md') {
     display: grid;
     place-items: center;
-    padding: 0 rem(13);
+    padding-left: calc(20 / 1440)* 100vw;
+    padding-right: calc(20 / 1440)* 100vw;
   }
 }
 

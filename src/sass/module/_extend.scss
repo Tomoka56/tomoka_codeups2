@@ -1,17 +1,17 @@
 @use "global" as *;
 
 
-.bgextend {
+.extend {
   position: relative;
   opacity: 0;
   overflow: hidden;
-  animation-name: bgextendAnimeBase;
+  animation-name: extendAnimeBase;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   display: block;
 }
 
-@keyframes bgextendAnimeBase {
+@keyframes extendAnimeBase {
   from {
     opacity: 0;
   }
@@ -21,16 +21,16 @@
   }
 }
 
-.bgextend .bgappear {
+.extend .wrap {
   display: block;
   opacity: 0;
-  animation-name: bgextendAnimeSecond;
+  animation-name: extendAnimeSecond;
   animation-duration: 1s;
   animation-delay: 0.6s;
   animation-fill-mode: forwards;
 }
 
-@keyframes bgextendAnimeSecond {
+@keyframes extendAnimeSecond {
   0% {
     opacity: 0;
   }
@@ -39,7 +39,7 @@
   }
 }
 
-.bgRLextend::before {
+.extend::before {
   display: block;
   content: "";
   position: absolute;
