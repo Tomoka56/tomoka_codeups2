@@ -1,0 +1,142 @@
+@use "global" as *;
+
+.loading{
+  background-color: $white;
+  width: 100%;
+  height: 100vh;
+  transition: all 2.0s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	display: grid;
+	place-content: center;
+}
+
+.loading__inner {
+	width: rem(496);
+	height: rem(133);
+	margin-inline: auto;
+	display: grid;
+	place-content: center;
+}
+
+.loading__img {
+	display: grid;
+	place-content: center;
+}
+
+.loading.is-hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.loading__main {
+  color: $green2;
+  font-family: $font-point1;
+  font-weight: $normal;
+	font-size: rem(36);
+	line-height: calc(48/36);
+	letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+	@include mq('md') {
+		font-size: rem(80);
+		line-height: calc(100/80);
+		letter-spacing: 0.54em;
+	}
+}
+
+.loading__main--white {
+	color: $white;
+}
+
+.loading__sub {
+  color: $green2;
+  font-family: $second-font;
+  font-size: rem(16);
+  line-height: calc(30/16);
+  text-align: center;
+	@include mq('md') {
+		font-size: rem(20);
+		line-height: calc(33.2/20);
+	}
+}
+
+.loading__sub--white {
+	color: $white;
+}
+
+.loading__mask{
+	display: flex;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.loading__mask.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.loading__img-left {
+	width: 50%;
+	height: 100vh;
+	aspect-ratio: 187.5/667;
+	transition: opacity 2s ease-out;
+	opacity: 0;
+	@include mq('md') {
+		aspect-ratio: 720/768;
+	}
+}
+
+.loading__img-right {
+	width: 50%;
+	height: 100vh;
+	aspect-ratio: 187.5/667;
+	transition: opacity 2s ease-out;
+	opacity: 0;
+	@include mq('md') {
+		aspect-ratio: 720/768;
+	}
+}
+
+.loading__fadeUp1 {
+	animation-name:fadeUpAnime1;
+	animation-duration:4s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+	}
+	@keyframes fadeUpAnime1{
+		0% {
+			opacity: 1;
+		transform: translateY(rem(1500));
+		}
+		100% {
+			opacity: 1;
+		}
+}
+
+.loading__fadeUp2 {
+	animation-name:fadeUpAnime2;
+	animation-duration:3.5s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+	}
+	@keyframes fadeUpAnime2{
+		0% {
+			opacity: 1;
+			transform: translateY(rem(1500));
+		}
+		100% {
+			opacity: 1;
+		}
+}
+
+.loading__delay {
+	animation-delay: .5s;
+}

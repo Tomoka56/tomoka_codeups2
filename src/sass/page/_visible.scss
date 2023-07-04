@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.visible--sp {
+  display: block;
+  @include mq('md') {
+    display: none;
+  }
+}

@@ -1,0 +1,120 @@
+@use "global" as *;
+
+.about-content {
+  position: relative;
+}
+
+.about-content__img {
+  position: relative;
+  z-index: 1;
+  max-width: rem(400);
+  width: 100%;
+  margin: auto;
+  @include mq('md') {
+    max-width: rem(1080);
+  }
+}
+
+.about-content__img img {
+  aspect-ratio: 281/186;
+  max-width: 81.45%;
+  margin-left: auto;
+  @include mq('md') {
+    aspect-ratio: 880/581;
+    max-width: 81.48%;
+  }
+}
+
+.about-content__img::before {
+  content: "";
+  position: absolute;
+  width: rem(128);
+  height: rem(194);
+  background-image: url(/assets/images/common/about_img2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+  top: rem(-26);
+  z-index: 10;
+  @include mq('md') {
+    max-width: rem(400);
+    width: 100%;
+    height: rem(606);
+    top: rem(-80);
+  }
+}
+
+.about-content__img::after {
+  @include mq('md') {
+    display: block;
+    content: "";
+    position: absolute;
+    width: rem(194);
+    height: rem(181);
+    background-image: url(/assets/images/common/bg_icon1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: calc(50% - min(50vw, 638px));
+    bottom: rem(-90);
+    z-index: 10;
+  }
+}
+
+.about-content__body {
+  margin-top: rem(40);
+  max-width: rem(520);
+  margin: auto;
+  @include mq('md') {
+    max-width: rem(881);
+    width: 100%;
+    margin-left: auto;
+    padding-right: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: rem(64);
+    right: 0;
+  }
+}
+
+.about-content__title {
+  font-size: rem(40);
+  line-height: 1;
+  font-family: $second-font;
+  font-weight: $normal;
+  color: $green2;
+  @include mq('md') {
+    font-size: rem(80);
+    line-height: calc(100/80);
+    color: $white;
+    margin-top: rem(-19);
+  }
+}
+
+.about-content__body-inner {
+  margin-top: rem(16);
+  @include mq('md') {
+    margin-left: rem(40);
+  }
+}
+
+.about-content__text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  @include mq('md') {
+    color: $white;
+  }
+}
+
+.about-content__btn {
+  margin-top: rem(40);
+  margin-left: rem(-3);
+  text-align: center;
+  text-align: -webkit-center;
+  @include mq('md') {
+  }
+}

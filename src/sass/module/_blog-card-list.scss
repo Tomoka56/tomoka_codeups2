@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.blog-card-list__item {
+  max-width: rem(520);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}

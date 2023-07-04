@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.information-content__img {
+  max-width: rem(500);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 0;
+  @include mq('md') {
+    max-width: 50%;
+  }
+}
+
+.information-content__img .information-content__color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #408F95;
+}
+
+.information-content__img img {
+  aspect-ratio: 345/227;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include mq('md') {
+    aspect-ratio: 540/356;
+    max-width: rem(540);
+  }
+}
+
+.information-content__body{
+  margin-top: rem(24);
+  @include mq('md') {
+    margin-top: initial;
+    margin-left: rem(48);
+    max-width: 45.5555%;
+  }
+}
+
+.information-content__title{
+  font-size: rem(20);
+  line-height: calc(24/20);
+  font-weight: $bold;
+  padding-bottom: rem(4);
+  border-bottom: 1px solid $green2;
+  @include mq('md') {
+    font-size: rem(24);
+    line-height: 1;
+    padding-bottom: rem(8);
+  }
+}
+
+.information-content__text-area {
+  margin-top: rem(8);
+}
+
+.information-content__text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  @include mq('md') {
+  -webkit-line-clamp: 4;
+  }
+}

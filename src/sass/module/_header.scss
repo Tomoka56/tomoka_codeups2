@@ -1,0 +1,125 @@
+@use "global" as *;
+
+.header {
+  width: 100%;
+  height: rem(80);
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: background-color .5s ease-out;
+  z-index: 900;
+  @include mq('md') {
+    height: rem(90);
+  }
+}
+
+.header.color {
+  background-color: rgba(13, 41, 54, 0.68);
+  transition: background-color .5s ease-out;
+}
+
+.header.is-open {
+  background-color: $green2;
+  transition: all .4s;
+}
+
+.header__inner {
+  width: 100%;
+  height: inherit;
+  padding: 0 rem(15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq('md') {
+    padding: 0 rem(21) 0 rem(40);
+  }
+}
+
+.header__logo {
+  width: rem(102);
+  height: inherit;
+  display: grid;
+  place-items: center;
+  @include mq('md') {
+    width: rem(133);
+  }
+}
+
+.header__nav {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__pc-nav {
+  height: inherit;
+  display: none;
+  @include mq('md') {
+    display: block;
+  }
+}
+
+.header__nav-list {
+  height: inherit;
+}
+
+.header__btn {
+  position: relative;
+  width: rem(32);
+  height: rem(24);
+  cursor: pointer;
+  opacity: 1;
+  z-index: 100;
+  @include mq('md') {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.header__hamburger {
+  display: block;
+  position: absolute;
+  width: rem(32);
+  height: rem(1);
+  background-color: $white;
+}
+
+.header__hamburger:first-child {
+  top: 0;
+  left: 0;
+  transition: transform .4s;
+}
+
+.header__hamburger:nth-child(2) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: transform .4s;
+}
+
+.header__hamburger:last-child {
+  bottom: 0;
+  left: 0;
+  transition: transform .4s;
+}
+
+.header__hamburger.is-active:first-child {
+  transform: translateY(11px) rotate(38deg);
+  left: rem(-4);
+  width: rem(40);
+}
+
+.header__hamburger.is-active:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger.is-active:last-child {
+  transform: translateY(-12px) rotate(-38deg);
+  left: rem(-4);
+  width: rem(40);
+}

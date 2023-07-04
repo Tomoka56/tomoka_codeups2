@@ -70,9 +70,9 @@ select {
 }
 
 /* Blur images when they have no alt attribute */
-img:not([alt]) {
-  filter: blur(10px);
-}
+// img:not([alt]) {
+//   filter: blur(10px);
+// }
 
 
 /* フォームリセット */
@@ -109,11 +109,4 @@ select {
 
 select::-ms-expand {
   display: none;
-}
-
-/* ホバー */
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.3s;
 }

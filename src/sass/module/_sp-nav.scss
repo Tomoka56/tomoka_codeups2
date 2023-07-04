@@ -1,0 +1,91 @@
+@use "global" as *;
+
+.sp-nav {
+  background-color: $green2;
+  color: $white;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 0.4s ease-in-out;
+  position: relative;
+  z-index: 10;
+  overflow-y: scroll;
+  display: none;
+  visibility: hidden;
+}
+
+.sp-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.sp-nav.is-open {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 10;
+}
+
+.sp-nav__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: rem(50);
+  padding-bottom: rem(130);
+}
+
+.sp-nav__items::-webkit-scrollbar{
+  display: none;
+}
+
+.sp-nav__inner:first-child {
+  margin-top: rem(-4);
+}
+
+.sp-nav__inner:last-child {
+  margin-bottom: rem(1);
+}
+
+.sp-nav__inner + .sp-nav__inner {
+  margin-left: rem(28);
+}
+
+.sp-nav__item.sp-nav__item--icon {
+  position: relative;
+  margin-top: rem(12);
+}
+
+.sp-nav__item.sp-nav__item--icon::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: rem(18);
+  height: rem(18);
+  background-image: url(/assets/images/common/hitode.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: rem(11);
+  left: rem(-22);
+}
+
+.sp-nav__link {
+  display: inline-block;
+  padding-top: rem(9);
+  padding-bottom: rem(10);
+}
+
+.sp-nav__main-menu {
+  font-size: rem(16);
+  line-height: calc(18/16);
+  font-weight: $bold;
+  padding-top: rem(9);
+  padding-bottom: rem(10);
+}
+
+
+.sp-nav__sub-menu {
+  font-size: rem(16);
+  line-height: calc(18/16);
+  font-weight: $normal;
+  padding-top: rem(9);
+  padding-bottom: rem(10);
+}
