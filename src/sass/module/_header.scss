@@ -123,3 +123,9 @@
   left: rem(-4);
   width: rem(40);
 }
+
+.header__sp-nav {
+  @include mq('md') {
+    display: none;
+  }
+}

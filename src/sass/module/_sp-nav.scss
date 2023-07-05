@@ -11,6 +11,9 @@
   overflow-y: scroll;
   display: none;
   visibility: hidden;
+  @include mq('md') {
+    display: none;
+  }
 }
 
 .sp-nav::-webkit-scrollbar {
