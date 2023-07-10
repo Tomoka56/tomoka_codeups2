@@ -14,7 +14,7 @@
     width: rem(301);
     height: rem(138);
     top: rem(-120);
-    left: calc(50% - min(50%, rem(620)));
+    left: calc(50% - min(48%, rem(620)));
     background-image: url(/assets/images/common/bg_icon3.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,11 +50,9 @@
 
 .voice__btn {
   margin-top: rem(39);
-  margin-left: rem(-3);
   text-align: center;
   text-align: -webkit-center;
   @include mq('md') {
     margin-top: rem(80);
-    margin-left: rem(-4);
   }
 }

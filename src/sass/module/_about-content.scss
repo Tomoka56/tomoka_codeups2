@@ -80,7 +80,7 @@
 .about-content__body-inner {
   margin-top: rem(16);
   @include mq('md') {
-    margin-left: rem(40);
+    padding-left: rem(40);
   }
 }
 
@@ -96,9 +96,6 @@
 
 .about-content__btn {
   margin-top: rem(40);
-  margin-left: rem(-3);
   text-align: center;
   text-align: -webkit-center;
-  @include mq('md') {
-  }
 }

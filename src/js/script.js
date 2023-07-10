@@ -95,10 +95,24 @@ $('.js-hamburger,.sp-nav__item a').click(function(event) {
     $(".js-header").toggleClass("is-open");
     $(".js-drawer").toggleClass("is-open");
     $(".js-drawer").fadeIn();
-    $('.top').toggleClass('is-hidden'); // 背景のスクロールを無効に
+    $('body').toggleClass('is-hidden'); // 背景のスクロールを無効に
 
   });
-
+  $(function(){
+    var state = false;
+    var pos;
+    $(".js-hamburger").click(function(){
+    if (state == false) {
+    pos = $(window).scrollTop();
+    $("body").addClass("is-fixed").css({"top": -pos});
+    state = true;
+    } else {
+    $("body").removeClass("is-fixed").css({"top": 0});
+    window.scrollTo(0, pos);
+    state = false;
+    }
+    });
+    });
 
   // キャンペーンスライダー
   const swiper2 = new Swiper(".campaign__slider", {

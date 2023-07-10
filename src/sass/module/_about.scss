@@ -14,7 +14,7 @@
     background-image: url(/assets/images/common/bg_icon1.png);
     background-repeat: no-repeat;
     background-size: cover;
-    right: calc(50% - min(50%, rem(640)));
+    right: calc(50% - min(48%, rem(640)));
     bottom: rem(-90);
     z-index: 10;
   }
