@@ -20,14 +20,13 @@
   }
 }
 
-.about__inner{
+.about__inner {
   margin-top: rem(27);
   @include mq('md') {
     position: relative;
     margin-top: initial;
   }
 }
-
 
 .about__content {
   margin-top: rem(54);

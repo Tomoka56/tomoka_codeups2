@@ -74,3 +74,10 @@
     margin-top: rem(140);
   }
 }
+
+.top__footer {
+  margin-top: rem(104);
+  @include mq('md') {
+    margin-top: rem(154);
+  }
+}
