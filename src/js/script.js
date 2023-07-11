@@ -86,6 +86,16 @@ jQuery(function ($) {
   }
 })
 
+// ハンバーガーメニュー/ドロワーメニュー
+$('.js-hamburger,.sp-nav__link').click(function() {
+    // メニューを開く
+    $(".js-bar").toggleClass("is-active");
+    $(".js-header").toggleClass("is-open");
+    $(".js-drawer").toggleClass("is-open");
+    // $('body').toggleClass('is-hidden');
+    // $('html').toggleClass('is-fixed');
+  });
+
 var flg = false;
 var winPos;
 
@@ -102,15 +112,6 @@ $('.js-hamburger,.sp-nav__link').on('click', function(){
 	}
 });
 
-// ハンバーガーメニュー/ドロワーメニュー
-$('.js-hamburger,.sp-nav__link').click(function() {
-    // メニューを開く
-    $(".js-bar").toggleClass("is-active");
-    $(".js-header").toggleClass("is-open");
-    $(".js-drawer").toggleClass("is-open");
-    $('body').toggleClass('is-hidden');
-    $('html').toggleClass('is-fixed');
-  });
 
   // キャンペーンスライダー
   const swiper2 = new Swiper(".campaign__slider", {
