@@ -10,9 +10,6 @@ jQuery(function ($) {
     });
   });
 
-  // スムーズにスクロールする設定
-
-
   $(document).on('click', 'a[href*="#"]', function () {
     let time = 400;
     let header = $('header').innerHeight();
@@ -106,8 +103,7 @@ $(function(){
   });
 
 // ハンバーガーメニュー/ドロワーメニュー
-$('.js-hamburger,.sp-nav__link').click(function(event) {
-    event.preventDefault(); // デフォルトの挙動を防止
+$('.js-hamburger,.sp-nav__item').click(function() {
     // メニューを開く
     $(".js-bar").toggleClass("is-active");
     $(".js-header").toggleClass("is-open");
