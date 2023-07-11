@@ -10,6 +10,9 @@ jQuery(function ($) {
     });
   });
 
+  // スムーズにスクロールする設定
+
+
   $(document).on('click', 'a[href*="#"]', function () {
     let time = 400;
     let header = $('header').innerHeight();
@@ -83,36 +86,34 @@ jQuery(function ($) {
       $('.js-header').addClass('color');
     }, 4000); // 遅延時間
   });
-
   }
 })
 
+$(function(){
+  var state = false;
+  var pos;
+  $(".js-hamburger").click(function(){
+  if (state == false) {
+  pos = $(window).scrollTop();
+  $("body").addClass("is-fixed").css({"top": -pos});
+  state = true;
+  } else {
+  $("body").removeClass("is-fixed").css({"top": 0});
+  window.scrollTo(0, pos);
+  state = false;
+  }
+  });
+  });
+
 // ハンバーガーメニュー/ドロワーメニュー
-$('.js-hamburger,.sp-nav__item a').click(function(event) {
+$('.js-hamburger,.sp-nav__link').click(function(event) {
     event.preventDefault(); // デフォルトの挙動を防止
     // メニューを開く
     $(".js-bar").toggleClass("is-active");
     $(".js-header").toggleClass("is-open");
     $(".js-drawer").toggleClass("is-open");
     $(".js-drawer").fadeIn();
-    $('body').toggleClass('is-hidden'); // 背景のスクロールを無効に
-
   });
-  $(function(){
-    var state = false;
-    var pos;
-    $(".js-hamburger").click(function(){
-    if (state == false) {
-    pos = $(window).scrollTop();
-    $("body").addClass("is-fixed").css({"top": -pos});
-    state = true;
-    } else {
-    $("body").removeClass("is-fixed").css({"top": 0});
-    window.scrollTo(0, pos);
-    state = false;
-    }
-    });
-    });
 
   // キャンペーンスライダー
   const swiper2 = new Swiper(".campaign__slider", {

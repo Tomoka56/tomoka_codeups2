@@ -30,7 +30,6 @@
 
 .sp-nav__items {
   display: flex;
-  align-items: center;
   justify-content: center;
   padding-top: rem(50);
   padding-bottom: rem(130);
@@ -40,24 +39,31 @@
   display: none;
 }
 
-.sp-nav__inner:first-child {
-  margin-top: rem(-4);
+.sp-nav__wrapper:first-child {
+  padding-left: rem(22);
 }
 
-.sp-nav__inner:last-child {
-  margin-bottom: rem(1);
+.sp-nav__wrapper:nth-child(2) {
+  padding-left: rem(40);
 }
 
-.sp-nav__inner + .sp-nav__inner {
-  margin-left: rem(28);
+.sp-nav__block + .sp-nav__block {
+  margin-top: rem(16);
 }
 
-.sp-nav__item.sp-nav__item--icon {
+.sp-nav__link {
+  display: inline-block;
+  padding-top: rem(9);
+  padding-bottom: rem(10);
+  width: 100%;
+}
+
+.sp-nav__link--icon {
+  display: block;
   position: relative;
-  margin-top: rem(12);
 }
 
-.sp-nav__item.sp-nav__item--icon::before {
+.sp-nav__link--icon::before {
   display: block;
   content: "";
   position: absolute;
@@ -66,17 +72,14 @@
   background-image: url(/assets/images/common/hitode.png);
   background-repeat: no-repeat;
   background-size: cover;
-  top: rem(11);
-  left: rem(-22);
+  top: rem(13);
+  left: rem(-21);
+  @include mq('md') {
+    left: rem(-21);
+  }
 }
 
-.sp-nav__link {
-  display: inline-block;
-  padding-top: rem(9);
-  padding-bottom: rem(10);
-}
-
-.sp-nav__main-menu {
+.sp-nav__menu {
   font-size: rem(16);
   line-height: calc(18/16);
   font-weight: $bold;
@@ -85,10 +88,6 @@
 }
 
 
-.sp-nav__sub-menu {
-  font-size: rem(16);
-  line-height: calc(18/16);
+.sp-nav__menu--sub {
   font-weight: $normal;
-  padding-top: rem(9);
-  padding-bottom: rem(10);
 }

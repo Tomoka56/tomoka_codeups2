@@ -12,13 +12,6 @@
   }
 }
 
-.campaign__inner1 {
-  margin-top: rem(23);
-  @include mq('md') {
-    margin-top: rem(35);
-  }
-}
-
 .campaign .swiper-wrapper {
   padding-top: rem(4);
   padding-bottom: rem(4);
@@ -80,8 +73,10 @@
   align-items: center;
   justify-content: center;
   margin-right: calc(50% - 50vw);
+  margin-top: rem(23);
   @include mq('md') {
     position: relative;
+    margin-top: rem(35);
   }
 }
 

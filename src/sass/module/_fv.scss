@@ -75,14 +75,12 @@
 	line-height: calc(48/40);
 	letter-spacing: 0.53em;
   text-indent: 0.5em;
-  // margin-left: rem(20);
   text-align: center;
   text-transform: uppercase;
 	@include mq('md') {
 		font-size: rem(80);
 		line-height: calc(100/80);
 		letter-spacing: 0.52em;
-    // margin-left: rem(40);
 	}
 }
 
