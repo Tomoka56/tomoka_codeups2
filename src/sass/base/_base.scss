@@ -74,12 +74,14 @@ body {
 
 body.is-hidden {
   overflow: hidden;
+  // opacity: 0;
 }
 
 body.is-fixed {
   position: fixed;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {

@@ -86,29 +86,30 @@ jQuery(function ($) {
   }
 })
 
-$(function(){
-  var state = false;
-  var pos;
-  $(".js-hamburger").click(function(){
-  if (state == false) {
-  pos = $(window).scrollTop();
-  $("body").addClass("is-fixed").css({"top": -pos});
-  state = true;
-  } else {
-  $("body").removeClass("is-fixed").css({"top": 0});
-  window.scrollTo(0, pos);
-  state = false;
-  }
-  });
-  });
+var flg = false;
+var winPos;
+
+$('.js-hamburger,.sp-nav__link').on('click', function(){
+
+	if(flg == false) {
+		winPos = $(window).scrollTop();
+		$('body').addClass('is-fixed').css({'top': -winPos});
+		flg = true;
+	} else {
+		$('body').removeClass('is-fixed').css({'top': 0});
+		window.scrollTo( 0 , winPos );
+		flg = false;
+	}
+});
 
 // ハンバーガーメニュー/ドロワーメニュー
-$('.js-hamburger,.sp-nav__item').click(function() {
+$('.js-hamburger,.sp-nav__link').click(function() {
     // メニューを開く
     $(".js-bar").toggleClass("is-active");
     $(".js-header").toggleClass("is-open");
     $(".js-drawer").toggleClass("is-open");
-    $(".js-drawer").fadeIn();
+    $('body').toggleClass('is-hidden');
+    $('html').toggleClass('is-fixed');
   });
 
   // キャンペーンスライダー
