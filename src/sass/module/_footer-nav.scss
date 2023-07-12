@@ -33,22 +33,11 @@
 .footer-nav__wrapper {
   @include mq('md') {
     display: inline-flex;
-    // align-items: center;
-    // justify-content: center;
   }
 }
 
 .footer-nav__block + .footer-nav__block {
   margin-top: rem(16);
-  // @include mq('md') {
-    // margin-top: initial;
-  // }
-}
-
-.footer-nav__block {
-  @include mq('md') {
-    // display: contents;
-  }
 }
 
 .footer-nav__block-pc {
