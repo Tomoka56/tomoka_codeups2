@@ -7,14 +7,18 @@
 .about-content__img-block {
   position: relative;
   aspect-ratio: 345/212;
+  max-width: rem(520);
   width: 100%;
+  margin: auto;
   height: 100%;
+  @include mq('md') {
+    max-width: initial;
+  }
 }
 
 .about-content__img1 {
   position: absolute;
   z-index: -1;
-  max-width: rem(400);
   width: 100%;
   margin: auto;
   right: 0;
