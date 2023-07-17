@@ -70,8 +70,8 @@ jQuery(function ($) {
   }else{
     // 2回目アクセスの処理
     $(document).ready(function() {
-    $('.js-loading').hide();
-    $('.js-btn,.js-mask').addClass('is-hidden');
+    $('.js-loading').css('display','block');
+    $('.js-btn,.js-mask,.js-loading').addClass('is-hidden');
     setTimeout(function() {
       const swiper1 = new Swiper(".fv__slider", {
         loop: true,
