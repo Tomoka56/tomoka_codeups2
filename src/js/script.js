@@ -1,6 +1,5 @@
 
 jQuery(function ($) {
-
     // ヘッダーの高さ分だけコンテンツを下げる
   $(function () {
     const height = $(".js-header").height();
@@ -56,13 +55,14 @@ jQuery(function ($) {
       $(document).ready(function() {
         setTimeout(function() {
           // fvスライダー
-          const swiper1 = new Swiper(".fv__slider", {
+          const swiper1 = new Swiper(".js-fv-slider", {
             loop: true,
-            speed: 1800,
+            speed: 1500,
             autoplay: {
               delay: 2500,
             },
           });
+          $('.js-loading').css('display','block');
           $('.js-btn,.js-mask').addClass('is-hidden');
           $('.js-header').addClass('color');
         }, 8000); // 遅延時間
@@ -70,12 +70,11 @@ jQuery(function ($) {
   }else{
     // 2回目アクセスの処理
     $(document).ready(function() {
-    $('.js-loading').css('display','block');
     $('.js-btn,.js-mask,.js-loading').addClass('is-hidden');
     setTimeout(function() {
-      const swiper1 = new Swiper(".fv__slider", {
+      const swiper1 = new Swiper(".js-fv-slider", {
         loop: true,
-        speed: 1800,
+        speed: 1500,
         autoplay: {
           delay: 2500,
         },
@@ -114,7 +113,7 @@ $('.js-hamburger,.sp-nav__link').on('click', function(){
 
 
   // キャンペーンスライダー
-  const swiper2 = new Swiper(".campaign__slider", {
+  const swiper2 = new Swiper(".js-campaign-slider", {
     slidesPerView: 1.25,
     spaceBetween: 30,
     loop: true,
@@ -202,4 +201,10 @@ $(window).on("scroll", function() {
   $(window).on('load', function() {
     BgFadeAnime();
   });
+
 });
+
+  // ローディング画面ちらつき防止
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.style.display = 'block';
+  });
