@@ -61,7 +61,7 @@
   }
 }
 
-.contact__block1 {
+.contact__info {
   max-width: rem(520);
   width: 86%;
   margin-left: auto;
@@ -71,7 +71,7 @@
   }
 }
 
-.contact__block1-inner{
+.contact__info-inner{
   @include mq('md') {
     display: flex;
     align-items: center;
@@ -121,7 +121,7 @@
     }
 }
 
-.contact__block2 {
+.contact__cta {
   margin-top: rem(20);
   @include mq('md') {
     margin-top: initial;
@@ -131,7 +131,7 @@
   }
 }
 
-.contact__block2::before {
+.contact__cta::before {
   @include mq('md') {
     display: block;
     content: "";

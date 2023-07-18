@@ -21,9 +21,7 @@ jQuery(function ($) {
 
   $(document).ready(function() {
     let scrollPosition = $(window).scrollTop(); // 現在のスクロール位置を保存
-
     $('body').css('overflow', 'hidden'); // 背景のスクロールを無効にする
-
     $('.js-loading').delay(3000).fadeOut(2000, function() {
       $('body').css('overflow', 'auto'); // アニメーション終了後に背景のスクロールを有効化する
       window.location.hash = 'scroll=' + scrollPosition; // スクロール位置をURLのハッシュに追加
@@ -50,9 +48,10 @@ jQuery(function ($) {
   if($i == 0){
     // 1回目アクセスの処理
     $(document).ready(function() {
-      $('.js-loading').delay(3000).fadeOut(2000);
-      });
-      $(document).ready(function() {
+           // ローディング画面ちらつき防止
+          $('.js-loading').css('display','block');
+          $('.js-loading').delay(3000).fadeOut(2000);
+          $('body').css('display','block');
         setTimeout(function() {
           // fvスライダー
           const swiper1 = new Swiper(".js-fv-slider", {
@@ -62,15 +61,16 @@ jQuery(function ($) {
               delay: 2500,
             },
           });
-          $('.js-loading').css('display','block');
-          $('.js-btn,.js-mask').addClass('is-hidden');
+          // $('.js-btn,.js-mask').addClass('is-hidden');
           $('.js-header').addClass('color');
-        }, 8000); // 遅延時間
+        }, 7000); // 遅延時間
       });
   }else{
     // 2回目アクセスの処理
     $(document).ready(function() {
-    $('.js-btn,.js-mask,.js-loading').addClass('is-hidden');
+      $('.js-loading').hide();
+      $('.js-btn,.js-mask,.js-loading').addClass('is-hidden');
+      $('body').css('display','block');
     setTimeout(function() {
       const swiper1 = new Swiper(".js-fv-slider", {
         loop: true,
@@ -99,7 +99,6 @@ var flg = false;
 var winPos;
 
 $('.js-hamburger,.sp-nav__link').on('click', function(){
-
 	if(flg == false) {
 		winPos = $(window).scrollTop();
 		$('body').addClass('is-fixed').css({'top': -winPos});
@@ -203,8 +202,3 @@ $(window).on("scroll", function() {
   });
 
 });
-
-  // ローディング画面ちらつき防止
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.style.display = 'block';
-  });
