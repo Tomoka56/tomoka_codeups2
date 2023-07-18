@@ -61,7 +61,7 @@ jQuery(function ($) {
               delay: 2500,
             },
           });
-          // $('.js-btn,.js-mask').addClass('is-hidden');
+          $('.js-btn,.js-mask').addClass('is-hidden');
           $('.js-header').addClass('color');
         }, 7000); // 遅延時間
       });
