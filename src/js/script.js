@@ -21,9 +21,9 @@ jQuery(function ($) {
 
   $(document).ready(function() {
     let scrollPosition = $(window).scrollTop(); // 現在のスクロール位置を保存
-    $('body').css('overflow', 'hidden'); // 背景のスクロールを無効にする
+    $('top').css('overflow', 'hidden'); // 背景のスクロールを無効にする
     $('.js-loading').delay(3000).fadeOut(2000, function() {
-      $('body').css('overflow', 'auto'); // アニメーション終了後に背景のスクロールを有効化する
+      $('top').css('overflow', 'auto'); // アニメーション終了後に背景のスクロールを有効化する
       window.location.hash = 'scroll=' + scrollPosition; // スクロール位置をURLのハッシュに追加
     });
   });

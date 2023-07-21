@@ -37,6 +37,16 @@
     max-width: 81.48%;
   }
 }
+
+.about-content__img1--sub img {
+  max-width: 100%;
+  margin-left: 0;
+  @include mq('md') {
+    width: initial;
+    margin-left: auto;
+  }
+}
+
 .about-content__img2 {
   position: absolute;
   z-index: 1;

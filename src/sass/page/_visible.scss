@@ -6,3 +6,10 @@
     display: none;
   }
 }
+
+.visible--pc {
+  display: none;
+  @include mq('md') {
+    display: block;
+  }
+}

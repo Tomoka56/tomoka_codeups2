@@ -1,0 +1,129 @@
+@use "global" as *;
+
+.sub-campaign {
+  position: relative;
+  z-index: -100;
+}
+
+.sub-campaign::before {
+  content: "";
+  position: absolute;
+  top: rem(57);
+  left: calc(50% - min(48%, rem(620)));
+  width: rem(122);
+  height: rem(55);
+  background-image: url(/assets/images/common/bg_icon3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  @include mq('md') {
+    top: rem(107);
+    width: rem(306);
+    height: rem(138);
+  }
+}
+
+.sub-campaign__inner {
+  position: relative;
+  z-index: -1;
+}
+
+.sub-campaign__contents {
+  margin-top: rem(52);
+  @include mq('md') {
+    margin-top: rem(150);
+  }
+}
+
+.sub-campaign__container {
+  margin-top: rem(40);
+}
+
+.sub-campaign__cards {
+  display: grid;
+  row-gap: rem(42);
+  padding-left: rem(33);
+  padding-right: rem(33);
+  @include mq('md') {
+    grid-template-columns: 1fr 1fr;
+    row-gap: rem(80);
+    column-gap: rem(40);
+    padding-left: initial;
+    padding-right: initial;
+  }
+}
+
+.sub-campaign__card {
+    max-width: rem(480);
+    margin: auto;
+    @include mq('md') {
+      max-width: initial;
+      margin: initial;
+    }
+}
+
+.sub-campaign__pagenavi {
+  text-align: center;
+  margin-top: rem(86);
+  color: $green2;
+}
+
+.sub-campaign__pagenavi .previouspostslink,
+.sub-campaign__pagenavi .page,
+.sub-campaign__pagenavi .current,
+.sub-campaign__pagenavi .nextpostslink {
+  border: 1px solid $green2;
+  padding: rem(8) rem(12);
+  margin: 0 rem(6);
+  font-family: $font-point1;
+  font-weight: $bold;
+}
+
+.sub-campaign__pagenavi .previouspostslink {
+  margin-right: rem(30);
+  margin-left: 0;
+  position: relative;
+}
+
+.sub-campaign__pagenavi .previouspostslink::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: rem(10);
+  width: rem(10);
+  height: rem(10);
+  border-top: 1px solid $green2;
+  border-left: 1px solid $green2;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.sub-campaign__pagenavi .current {
+  background-color: $green2;
+  color: $white;
+}
+
+.sub-campaign__pagenavi .nextpostslink {
+  margin-left: rem(30);
+  margin-right: 0;
+  position: relative;
+}
+
+.sub-campaign__pagenavi .nextpostslink::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  right: rem(10);
+  width: rem(10);
+  height: rem(10);
+  border-bottom: 1px solid $green2;
+  border-right: 1px solid $green2;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.sub-campaign__pagenavi .larger--pc {
+  display: none;
+  @include mq('md') {
+    display: inline;
+  }
+}
