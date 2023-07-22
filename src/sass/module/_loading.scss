@@ -105,7 +105,7 @@
 	}
 }
 
-.fadeUp1 {
+.loading__img-left--fadeUp1 {
 	animation-name:fadeUpAnime1;
 	animation-duration:4s;
 	animation-fill-mode:forwards;
@@ -121,10 +121,11 @@
 		}
 }
 
-.fadeUp2 {
+.loading__img-right--fadeUp2 {
 	animation-name:fadeUpAnime2;
 	animation-duration:3.5s;
 	animation-fill-mode:forwards;
+	animation-delay: .5s;
 	opacity: 0;
 	}
 	@keyframes fadeUpAnime2{
@@ -135,8 +136,4 @@
 		100% {
 			opacity: 1;
 		}
-}
-
-.fadeUp2--delay {
-	animation-delay: .5s;
 }

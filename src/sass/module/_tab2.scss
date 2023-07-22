@@ -1,31 +1,65 @@
 @use "global" as *;
 
+.tab2__inner {
+  max-width: rem(500);
+  width: 100%;
+  margin: auto;
+  @include mq('md') {
+    max-width: initial;
+  }
+}
+
 .tab2__items {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
   column-gap: rem(20);
   @include mq('md') {
-    column-gap: rem(90);
+    column-gap: rem(88);
   }
 }
 
 .tab2__item {
   font-size: rem(14);
-  padding: rem(10) 0;
+  padding: rem(8) 0;
   max-width: rem(102);
   width: 100%;
   text-align: center;
   color: $green2;
   background-color: $green3;
   border: 1px solid $green2;
+  box-shadow: rem(2) rem(2) rem(4) 0 rgba(0, 0, 0, 0.25);
   @include mq('md') {
     font-size: rem(24);
     padding: rem(13) 0;
-    max-width: rem(300);
+    max-width: rem(330);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
+}
+
+.tab2__item img {
+  aspect-ratio: 1/1;
+  width: rem(64);
+  height: rem(64);
+  object-fit: cover;
+  // display: inline-block;
 }
 
 .tab2__item.is-active {
   color: $white;
   background-color: $green2;
+}
+
+.tab2__item.is-active .tab2__img img {
+  display: none;
+}
+
+.tab2__item.is-active .tab2__img {
+  width: rem(64);
+  height: rem(64);
+  background-image: url(/assets/images/common/info-icon-white.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

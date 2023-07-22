@@ -5,8 +5,8 @@
   z-index: -1;
   background-image: url(/assets/images/common/about-fv-sp.jpg);
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
+  height: rem(460);
   @include mq('md') {
     background-image: url(/assets/images/common/about-fv-pc.jpg);
   }

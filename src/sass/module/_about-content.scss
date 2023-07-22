@@ -16,6 +16,10 @@
   }
 }
 
+.about-content__img-block--sub {
+  aspect-ratio: 345/228;
+}
+
 .about-content__img1 {
   position: absolute;
   z-index: -1;
@@ -86,6 +90,13 @@
   }
 }
 
+.about-content__body--sub {
+  display: contents;
+  // @include mq('md') {
+  //   display: block;
+  // }
+}
+
 .about-content__title {
   font-size: rem(40);
   line-height: 1;
@@ -100,11 +111,25 @@
   }
 }
 
+.about-content__title--sub {
+  position: absolute;
+  top: rem(24);
+  left: rem(24);
+  color: $white;
+  @include mq('md') {
+    position: initial;
+  }
+}
+
 .about-content__body-inner {
   margin-top: rem(16);
   @include mq('md') {
     padding-left: rem(40);
   }
+}
+
+.about-content__body-inner--sub {
+  margin-top: rem(40);
 }
 
 .about-content__text {

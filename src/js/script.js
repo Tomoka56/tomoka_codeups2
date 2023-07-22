@@ -201,4 +201,25 @@ $(window).on("scroll", function() {
     BgFadeAnime();
   });
 
+
+
+
+
+
+  // Informationタブメニュー
+$(function () {
+  // 最初のコンテンツは表示
+  $(".js-content:first-of-type").css("display", "block");
+  // タブをクリックすると
+  $(".js-tab").on("click", function () {
+    // 現在選択されているタブからcurrentを外す
+    $(".is-active").removeClass("is-active");
+    // クリックされたタブにcurrentクラスを付与
+    $(this).addClass("is-active");
+    // クリックされた要素が何番目か取得（クリックしたタブのインデックス番号を取得）
+    const index = $(this).index();
+    // クリックしたタブのインデックス番号と同じコンテンツを表示
+    $(".js-content").hide().eq(index).fadeIn(300);
+  });
+});
 });

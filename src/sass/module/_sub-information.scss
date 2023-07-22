@@ -1,8 +1,49 @@
 @use "global" as *;
 
+.sub-information {
+  position: relative;
+  z-index: -100;
+}
+
+.sub-information::before {
+  content: "";
+  position: absolute;
+  top: rem(56);
+  left: rem(14);
+  width: rem(122);
+  height: rem(55);
+  background-image: url(/assets/images/common/bg_icon3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  @include mq('md') {
+    top: rem(107);
+    left: calc(50% - min(48%, rem(620)));
+    width: rem(306);
+    height: rem(138);
+  }
+}
+
+.sub-information__contents {
+  margin-top: rem(52);
+  @include mq('md') {
+    margin-top: rem(150);
+  }
+}
+
 .sub-information__tab {
   margin-top: rem(120);
   @include mq('md') {
   margin-top: rem(150);
+  }
+}
+
+.sub-information__cards {
+  max-width: rem(520);
+  width: 100%;
+  margin-inline: auto;
+  @include mq('md') {
+    max-width: initial;
+    margin-top: rem(20);
   }
 }

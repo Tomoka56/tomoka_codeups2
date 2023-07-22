@@ -28,14 +28,14 @@
   z-index: 10;
 }
 
-.sp-nav__items {
+.sp-nav__block {
   display: flex;
   justify-content: center;
   padding-top: rem(50);
   padding-bottom: rem(130);
 }
 
-.sp-nav__items::-webkit-scrollbar{
+.sp-nav__block::-webkit-scrollbar{
   display: none;
 }
 
@@ -47,7 +47,7 @@
   padding-left: rem(40);
 }
 
-.sp-nav__block + .sp-nav__block {
+.sp-nav__items + .sp-nav__items {
   margin-top: rem(16);
 }
 
