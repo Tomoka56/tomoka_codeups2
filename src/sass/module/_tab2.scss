@@ -39,12 +39,17 @@
   }
 }
 
+.tab2__item:hover {
+  @include mq('md') {
+    cursor: pointer;
+  }
+}
+
 .tab2__item img {
   aspect-ratio: 1/1;
   width: rem(64);
   height: rem(64);
   object-fit: cover;
-  // display: inline-block;
 }
 
 .tab2__item.is-active {

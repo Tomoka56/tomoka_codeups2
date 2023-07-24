@@ -1,0 +1,74 @@
+@use "global" as *;
+
+.faq-item__term {
+  padding: rem(15) rem(16);
+  background-color: $green2;
+  @include mq('md') {
+    padding: rem(25) rem(40);
+    cursor: pointer;
+  }
+}
+
+.faq-item__title {
+  font-size: rem(16);
+  font-weight: $normal;
+  color: $white;
+  position: relative;
+  z-index: 1;
+  @include mq('md') {
+    font-size: rem(20);
+  }
+}
+
+.faq-item__title::before,
+.faq-item__title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: rem(28);
+  height: 1px;
+  background-color: $white;
+  z-index: 10;
+  @include mq('md') {
+    width: rem(32);
+  }
+}
+
+.faq-item__title::before {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.faq-item__title::after {
+  // opacity: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-item__term.is-close .faq-item__title::after {
+  opacity: 1;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.faq-item__description {
+  border: 1px solid $green2;
+  background-color: $white;
+  padding: rem(20) rem(16) rem(19);
+  @include mq('md') {
+    padding: rem(37) rem(40);
+    margin-top: rem(16);
+  }
+}
+
+.faq-item__answer {
+  font-size: rem(16);
+  font-weight: $normal;
+line-height: auto;
+}

@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.thanks::before {
+  content: "";
+  position: absolute;
+  top: rem(57);
+  left: rem(14);
+  width: rem(122);
+  height: rem(55);
+  background-image: url(/assets/images/common/bg_icon3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  @include mq('md') {
+    top: rem(107);
+    left: calc(50% - min(48%, rem(620)));
+    width: rem(302);
+    height: rem(138);
+  }
+}
+
+.thanks__contents {
+  margin-top: rem(52);
+  text-align: center;
+  @include mq('md') {
+    margin-top: rem(150);
+  }
+}
+
+.thanks__text-wrap {
+  margin-top: rem(40);
+}

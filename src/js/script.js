@@ -138,12 +138,12 @@ $(window).on("scroll", function() {
   let scrollPosition = $(window).height() + $(window).scrollTop();
   let footHeight = $("footer").innerHeight();
   if ( scrollHeight - scrollPosition  <= footHeight ) {
-      $("#page-top").css({
+      $(".js-page-top").css({
           "position":"absolute",
           "bottom": footHeight + 19
       });
   } else {
-      $("#page-top").css({
+      $(".js-page-top").css({
           "position":"fixed",
           "bottom": "16px"
       });9
@@ -202,6 +202,30 @@ $(window).on("scroll", function() {
   });
 
 
+// Aboutモーダル
+  // コース画像モーダル表示イベント
+  var scrollPos;//topからのスクロール位置
+  $(".js-photo").click(function () {
+    scrollPos = $(window).scrollTop();//topからのスクロール位置を格納
+    // まず、クリックした画像の HTML(<img>タグ全体)を#frayDisplay内にコピー
+    $(".js-overlay").html($(this).prop("outerHTML"));
+    //そして、fadeInで表示する。
+    $(".js-overlay").fadeIn(200);
+    $(".js-header, .js-page-top").hide();
+    $('body').addClass('is-fixed').css({ top: -scrollPos });
+    return false;
+  });
+
+  // コース画像モーダル非表示イベント
+  // モーダル画像背景 または 拡大画像そのものをクリックで発火
+  $(".js-overlay").click(function () {
+    // 非表示にする
+    $(".js-overlay").fadeOut(200);
+    $(".js-header, .js-page-top").fadeIn();
+    $('body').removeClass('is-fixed').css({ top: 0 });//背景固定を解除
+		$(window).scrollTop(scrollPos);//元の位置までスクロール
+    return false;
+  });
 
 
 
@@ -222,4 +246,11 @@ $(function () {
     $(".js-content").hide().eq(index).fadeIn(300);
   });
 });
+
+
+$('.js-accordion').on('click',     function () {
+  $(this).next().slideToggle(300);
+  $(this).toggleClass('is-close', 300);
+});
+
 });

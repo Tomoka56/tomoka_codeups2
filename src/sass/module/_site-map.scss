@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.site-map::before {
+  content: "";
+  position: absolute;
+  top: rem(57);
+  left: rem(14);
+  width: rem(122);
+  height: rem(55);
+  background-image: url(/assets/images/common/bg_icon3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  @include mq('md') {
+    top: rem(107);
+    left: calc(50% - min(48%, rem(620)));
+    width: rem(302);
+    height: rem(138);
+  }
+}
+
+.site-map__contents {
+  margin-top: rem(52);
+  @include mq('md') {
+    margin-top: rem(150);
+  }
+}
+
+.site-map__nav {
+  color: $black;
+  background-color: transparent;
+}
+
+.site-map__nav .sub-nav__link--icon::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: rem(18);
+  height: rem(18);
+  background-image: url(/assets/images/common/hitode-black.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: rem(13);
+  left: rem(-21);
+  @include mq('md') {
+    left: rem(-21);
+  }
+}
