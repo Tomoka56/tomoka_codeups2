@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.sub-blog-card {
+  display: block;
+  padding: rem(16);
+  background-color: $white;
+  box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
+}
+
+.sub-blog-card__inner {
+  display: flex;
+}
+
+.sub-blog-card__img {
+  max-width: rem(121);
+  width: 100%;
+}
+
+.sub-blog-card__img img {
+  aspect-ratio: 121/90;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sub-blog-card__body {
+  margin-left: rem(16);
+}
+
+.sub-blog-card__date {
+  font-size: rem(12);
+  font-family: $second-font;
+  font-weight: $normal;
+  line-height: calc(18/12);
+}
+
+.sub-blog-card__title {
+  font-weight: $medium;
+  font-size: rem(16);
+  line-height: calc(24/16);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

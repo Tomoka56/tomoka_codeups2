@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.side-bar__items {
+  // display: grid;
+  // gap: rem(40);
+  margin-top: rem(24);
+}
+
+.side-bar__head {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.side-bar__head::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: rem(5);
+  height: rem(50);
+  background-color: $green2;
+  left: 0;
+  top: 0;
+}
+
+.side-bar__icon {
+  width: rem(50);
+  height: rem(50);
+  margin-left: rem(16);
+}
+
+.side-bar__icon img {
+  aspect-ratio: 1/1 ;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-bar__title {
+  margin-left: rem(8);
+  font-size: rem(24);
+  font-weight: $normal;
+}
+
+.side-bar__btn {
+  text-align: center;
+  margin-top: rem(40);
+}

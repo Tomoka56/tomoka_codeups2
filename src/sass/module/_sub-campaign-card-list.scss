@@ -1,0 +1,6 @@
+@use "global" as *;
+
+.sub-campaign-card-list {
+  display: grid;
+  gap: rem(40);
+}

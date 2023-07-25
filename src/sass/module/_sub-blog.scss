@@ -1,0 +1,132 @@
+@use "global" as *;
+
+.sub-blog {
+  position: relative;
+  z-index: -100;
+}
+
+.sub-blog::before {
+  content: "";
+  position: absolute;
+  top: rem(57);
+  left: rem(14);
+  width: rem(122);
+  height: rem(55);
+  background-image: url(/assets/images/common/bg_icon3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  @include mq('md') {
+    top: rem(107);
+    left: calc(50% - min(48%, rem(620)));
+    width: rem(306);
+    height: rem(138);
+  }
+}
+
+.sub-blog__inner {
+  position: relative;
+  z-index: -1;
+}
+
+.sub-blog__container {
+  margin-top: rem(52);
+  @include mq('md') {
+    margin-top: rem(150);
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.sub-blog__cards {
+  display: grid;
+  gap: rem(40);
+  @include mq('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sub-blog__pagenavi {
+  text-align: center;
+  margin-top: rem(86);
+  color: $green2;
+}
+
+.sub-blog__pagenavi .previouspostslink,
+.sub-blog__pagenavi .page,
+.sub-blog__pagenavi .current,
+.sub-blog__pagenavi .nextpostslink {
+  border: 1px solid $green2;
+  padding: rem(8) rem(12);
+  margin: 0 rem(6);
+  font-family: $font-point1;
+  font-weight: $bold;
+}
+
+.sub-blog__pagenavi .previouspostslink {
+  margin-right: rem(30);
+  margin-left: 0;
+  position: relative;
+}
+
+.sub-blog__pagenavi .previouspostslink::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: rem(10);
+  width: rem(10);
+  height: rem(10);
+  border-top: 1px solid $green2;
+  border-left: 1px solid $green2;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.sub-blog__pagenavi .current {
+  background-color: $green2;
+  color: $white;
+}
+
+.sub-blog__pagenavi .nextpostslink {
+  margin-left: rem(30);
+  margin-right: 0;
+  position: relative;
+}
+
+.sub-blog__pagenavi .nextpostslink::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  right: rem(10);
+  width: rem(10);
+  height: rem(10);
+  border-bottom: 1px solid $green2;
+  border-right: 1px solid $green2;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.sub-blog__pagenavi .larger--pc {
+  display: none;
+  @include mq('md') {
+    display: inline;
+  }
+}
+
+.sub-blog__side-contents {
+  margin-top: rem(80);
+  @include mq('md') {
+    margin-top: initial;
+    margin-left: rem(80);
+  }
+}
+
+.sub-blog__side-contents-inner {
+  max-width: rem(520);
+  width: 100%;
+  margin: auto;
+  display: grid;
+  gap: rem(80);
+  @include mq('md') {
+    max-width: rem(294);
+  }
+}

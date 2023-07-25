@@ -1,0 +1,56 @@
+@use "global" as *;
+
+.blog-detail__date {
+  font-size: rem(14);
+  font-family: $second-font;
+}
+
+.blog-detail__title {
+  font-size: rem(24);
+  font-weight: $medium;
+  margin-top: rem(8);
+  position: relative;
+}
+
+.blog-detail__title::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: rem(1);
+  background-color: $green2;
+  bottom: rem(-3);
+  left: 0;
+  margin: auto;
+}
+
+.blog-detail__img {
+  margin-top: rem(24);
+}
+
+.blog-detail__img img {
+  aspect-ratio: 345/231;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-detail {
+  p {
+    margin-top: rem(24);
+    font-size: rem(16);
+  }
+}
+
+.blog-detail {
+  ul {
+    margin-top: rem(24);
+  }
+  li {
+    background-image: url(/assets/images/common/hitode-black.png);
+    background-repeat: no-repeat;
+    background-size: rem(18);
+    background-position: left;
+    padding-left: rem(24);
+  }
+}

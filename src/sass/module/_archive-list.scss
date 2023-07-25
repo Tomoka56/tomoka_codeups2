@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.archive-list__toggle-item {
+  color: $green2;
+  font-size: rem(24);
+}
+
+.archive-list__year {
+  cursor: pointer;
+}
+
+.archive-list__month {
+  margin-left: rem(20);
+  padding-left: rem(16);
+  position: relative;
+}
+
+.archive-list__month::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: rem(8) 0 rem(8) rem(12);
+  border-color: transparent transparent transparent $green2;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
