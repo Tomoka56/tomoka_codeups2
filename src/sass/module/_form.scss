@@ -1,0 +1,157 @@
+@use "global" as *;
+
+.form__inner.inner {
+  max-width: rem(520);
+  width: 100%;
+  margin-inline: auto;
+  @include mq('md') {
+    max-width: rem(700);
+  }
+}
+
+.form__item {
+  padding-bottom: rem(24);
+  border-bottom: 1px dotted $green2;
+  @include mq('md') {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.form__item + .form__item {
+  margin-top: rem(24);
+}
+
+.form__item dt {
+  font-size: rem(16);
+  font-weight: $bold;
+  @include mq('md') {
+    width: rem(220);
+  }
+}
+
+.form__item span {
+  display: inline-block;
+  background-color: #C94800;
+  color: $white;
+  font-size: rem(12);
+  font-weight: $normal;
+  padding: rem(2) rem(16);
+  margin-left: rem(8);
+}
+
+.form__item dd {
+  margin-top: rem(16);
+  @include mq('md') {
+    width: rem(480);
+  }
+}
+
+.form__item input[type=text],
+.form__item input[type=email],
+.form__item input[type=tel] {
+  display: block;
+  border: 1px solid $green2;
+  width: 100%;
+  height: rem(40);
+  padding-left: rem(16);
+  padding-right: rem(16);
+}
+
+.form__item input[type=checkbox] {
+  display: block;
+  width: rem(14);
+  height: rem(14);
+  border: 1px solid $green2;
+  display: inline-flex;
+  vertical-align: sub;
+  cursor: pointer;
+}
+
+.form__item label {
+  display: block;
+}
+
+.form__item select {
+  display: block;
+  border: 1px solid $green2;
+  width: 100%;
+  height: rem(40);
+  font-size: rem(12);
+  padding-left: rem(8);
+  cursor: pointer;
+}
+
+.form__item textarea {
+  display: block;
+  border: 1px solid $green2;
+  width: 100%;
+  font-size: rem(12);
+  padding-left: rem(8);
+}
+
+::placeholder {
+  color: $green3;
+}
+
+.form__confirm {
+  max-width: 73%;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-top: rem(40);
+}
+
+.form__confirm input[type=checkbox] {
+  display: block;
+  width: rem(22);
+  height: rem(22);
+  border: 1px solid $green2;
+  display: inline-flex;
+  vertical-align: text-top;
+  cursor: pointer;
+
+}
+
+.form__item input[type=checkbox],
+.form__confirm input[type=checkbox] {
+  position: relative;
+}
+
+.form__item input[type=checkbox]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: rem(2) solid #C94800;/*チェックの太さ*/
+  border-left: rem(2) solid #C94800;/*チェックの太さ*/
+  opacity: 0;/*チェック前は非表示*/
+  height: 6px;/*チェックの高さ*/
+  width: 11px;/*チェックの横幅*/
+  top: 0;/*チェック時の位置調整*/
+  left: 50%;/*チェック時の位置調整*/
+  transform: rotate(-45deg) translate(-50%, -50%);/*チェック時の位置調整*/
+}
+
+.form__confirm input[type=checkbox]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: rem(3) solid #C94800;/*チェックの太さ*/
+  border-left: rem(3) solid #C94800;/*チェックの太さ*/
+  opacity: 0;/*チェック前は非表示*/
+  height: rem(6);/*チェックの高さ*/
+  width: rem(10);/*チェックの横幅*/
+  top: 20%;/*チェック時の位置調整*/
+  left: 50%;/*チェック時の位置調整*/
+  transform: rotate(-45deg) translate(-50%, -50%);/*チェック時の位置調整*/
+}
+
+.form__item input[type=checkbox]:checked::after,
+.form__confirm input[type=checkbox]:checked::after {
+  opacity: 1;/*チェック後表示*/
+}
+
+.form__btn {
+  text-align: center;
+  margin-top: rem(24);
+}

@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.page-contact {
+  position: relative;
+  z-index: -100;
+}
+
+.page-contact::before {
+  content: "";
+  position: absolute;
+  top: rem(56);
+  left: rem(14);
+  width: rem(122);
+  height: rem(55);
+  background-image: url(/assets/images/common/bg_icon3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  @include mq('md') {
+    top: rem(107);
+    left: calc(50% - min(48%, rem(622)));
+    width: rem(304);
+    height: rem(138);
+  }
+}
+
+.page-contact__form {
+  margin-top: rem(52);
+  @include mq('md') {
+    margin-top: rem(150);
+  }
+}
