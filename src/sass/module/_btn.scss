@@ -22,9 +22,52 @@
   z-index: -1;
 }
 
+.btn:hover {
+  color: $green2;
+  opacity: 1;
+}
+
+.btn:hover .btn__bg {
+  color: $green2;
+  opacity: 1;
+}
+
+.btn:hover .btn__bg::before {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+
+.btn:hover .btn__text::before {
+  background-image: url(/assets/images/common/arrow4.png);
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
 .btn--white::after {
   background: $green2;
   border: rem(1) solid $white;
+}
+
+.btn--white:hover {
+  background-color: $green2;
+  opacity: 1;
+}
+
+.btn--white:hover .btn__text--green {
+  color: $white;
+}
+
+.btn--white:hover .btn__text--green::before {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  top: 22%;
+  right: rem(-46);
+  width:rem(41);
+  height: rem(7);
+  background-image: url(/assets/images/common/arrow3.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .btn__bg {
@@ -44,12 +87,6 @@
   z-index: 100;
 }
 
-.btn__bg--white {
-  color: $green2;
-  background-color: $white;
-  border: 1px solid $green2;
-}
-
 .btn__bg::before {
   display: block;
   background: $white;
@@ -63,6 +100,12 @@
   transform: scale(0, 1);
   transform-origin: left top;
   transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.btn__bg--white {
+  color: $green2;
+  background-color: $white;
+  border: 1px solid $green2;
 }
 
 .btn__bg--white::before {
@@ -80,43 +123,10 @@
   transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
-.btn:hover {
-  color: $green2;
-  opacity: 1;
-}
-
-.btn:hover .btn__bg {
-  color: $green2;
-  opacity: 1;
-}
-
-.btn:hover .btn__bg::before {
-  transform: scale(1, 1);
-  opacity: 1;
-}
-
-.btn--white:hover {
-  background-color: $green2;
-  opacity: 1;
-}
-
-.btn--white:hover .btn__text--green {
-  color: $white;
-}
-
 .btn__text {
   position: relative;
   display: inline-flex;
   align-items: center;
-}
-
-.btn__text--green {
-  color: $green2;
-}
-
-.btn__text img {
-  width: rem(41);
-  height: rem(7);
 }
 
 .btn__text::before {
@@ -132,6 +142,10 @@
   background-size: contain;
 }
 
+.btn__text--green {
+  color: $green2;
+}
+
 .btn__text--green::before {
   content: "";
   position: absolute;
@@ -145,21 +159,7 @@
   background-size: contain;
 }
 
-.btn:hover .btn__text::before {
-  background-image: url(/assets/images/common/arrow4.png);
-  transition: all 0.3s ease-in-out;
-  opacity: 1;
-}
-
-.btn--white:hover .btn__text--green::before {
-  content: "";
-  position: absolute;
-  transition: all 0.3s ease-in-out;
-  top: 22%;
-  right: rem(-46);
-  width:rem(41);
+.btn__text img {
+  width: rem(41);
   height: rem(7);
-  background-image: url(/assets/images/common/arrow3.png);
-  background-repeat: no-repeat;
-  background-size: contain;
 }

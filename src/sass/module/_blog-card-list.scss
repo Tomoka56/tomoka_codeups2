@@ -1,5 +1,13 @@
 @use "global" as *;
 
+.blog-card-list {
+  display: grid;
+  gap: rem(40);
+  @include mq('md') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .blog-card-list__item {
   max-width: rem(520);
   width: 100%;

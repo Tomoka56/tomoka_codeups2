@@ -2,6 +2,8 @@
 
 .sub-contact {
   margin-top: rem(112);
+  position: relative;
+  z-index: -1000;
   @include mq('md') {
     margin-top: rem(145);
   }

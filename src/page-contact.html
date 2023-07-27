@@ -267,7 +267,11 @@
         </div>
       </div>
     </header>
-    <div class="page-contact-fv sub-fv">
+    <div class="sub-fv">
+      <picture class="sub-fv__img">
+        <source srcset="./assets/images/common/contact-fv-sp.jpg" media="(max-width: 767px)" />
+        <img src="./assets/images/common/contact-fv-pc.jpg" alt="真上から見た波打ち際"/>
+      </picture>
       <div class="sub-fv__inner">
         <h1 class="sub-fv__title">Contact</h1>
       </div>
@@ -287,7 +291,7 @@
         <div class="page-contact__form">
           <form action="" class="form">
             <div class="form__inner">
-              <div class="form__items">
+              <dl class="form__items">
                 <div class="form__item">
                   <dt>お名前<span>必須</span></dt>
                   <dd><input type="text" name="name" id="name" placeholder="沖縄 太郎" required></dd>
@@ -324,7 +328,7 @@
                   <dt>お問合せ内容<span>必須</span></dt>
                   <dd><textarea name="text" id="" cols="30" rows="10"></textarea></dd>
                 </div>
-              </div>
+              </dl>
             </div>
             <div class="form__confirm">
               <div class="form__confirm-inner">

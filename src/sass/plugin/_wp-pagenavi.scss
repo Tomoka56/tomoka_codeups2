@@ -15,6 +15,10 @@
   transition: 0.3s ease;
   opacity: 1;
 }
+.wp-pagenavi a,
+.wp-pagenavi span {
+  display: inline-block;
+}
 
 .wp-pagenavi a:hover,
 .wp-pagenavi span:hover {
