@@ -1,43 +1,101 @@
 @use "global" as *;
 
 
-.gallery {
+.gallery__wrap {
+  margin-top: rem(40);
+  @include mq('md') {
+    margin-top: rem(80);
+  }
+}
+.gallery__items {
   display: grid;
   gap: rem(8);
   @include mq('md') {
     grid-template-columns: 1fr, 1fr;
-    grid-template-rows: 1fr, 1fr, 1fr, 1fr;
   }
 }
 
-// .gallery__item--big-top {
-//   grid-column: 1 / 2;
-//   grid-row: 1 / 3;
-// }
+// モーダル
+.gallery__modal {
+  display: none;
+  position: fixed;
+}
 
-// .gallery__item--big-bottom {
-//   grid-column: 2 / 3 ;
-//   grid-row: 3 / 5;
-// }
+.gallery__modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 32, 32, 0.80);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
 
-// .gallery__item--big img {
-//   aspect-ratio: 345/523;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   @include mq('md') {
-//     aspect-ratio: 492/746;
-//     cursor: pointer;
-//   }
-// }
+.gallery__modal img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: rem(920);
+  aspect-ratio: 920/586;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-// .gallery__item--small {
-//   aspect-ratio: 345/219;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   @include mq('md') {
-//     aspect-ratio: 580/369;
-//     cursor: pointer;
-//   }
-// }
+.gallery__item--big-top {
+  @include mq('md') {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+}
+
+.gallery__item--big-bottom {
+  @include mq('md') {
+    grid-column: 2 / 3 ;
+    grid-row: 1 / 3;
+  }
+}
+
+.gallery__item--big img {
+  aspect-ratio: 345/523;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include mq('md') {
+    aspect-ratio: 492/746;
+    cursor: pointer;
+  }
+}
+
+.gallery__item--small img {
+  aspect-ratio: 345/219;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include mq('md') {
+    aspect-ratio: 580/369;
+    cursor: pointer;
+  }
+}
+
+
+
+
+.gallery__items-inner1 {
+  display: grid;
+  gap: rem(8);
+  @include mq('md') {
+    grid-template-columns: 45.8% 53%;
+  }
+}
+
+.gallery__items-inner2 {
+  display: grid;
+  gap: rem(8);
+  @include mq('md') {
+    grid-template-columns: 53% 45.8%;
+  }
+}
