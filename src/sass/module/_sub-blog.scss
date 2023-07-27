@@ -41,8 +41,11 @@
 .sub-blog__cards {
   display: grid;
   gap: rem(40);
+  padding-left: rem(6);
+  padding-right: rem(6);
   @include mq('md') {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(80);
   }
 }
 
@@ -116,7 +119,7 @@
   margin-top: rem(80);
   @include mq('md') {
     margin-top: initial;
-    margin-left: rem(80);
+    margin-left: rem(82);
   }
 }
 

@@ -1,11 +1,10 @@
 @use "global" as *;
 
-.form__inner.inner {
-  max-width: rem(520);
-  width: 100%;
-  margin-inline: auto;
+.form__inner {
   @include mq('md') {
     max-width: rem(700);
+    width: 100%;
+    margin: auto;
   }
 }
 
@@ -13,13 +12,15 @@
   padding-bottom: rem(24);
   border-bottom: 1px dotted $green2;
   @include mq('md') {
+    padding-bottom: rem(41);
     display: flex;
     align-items: center;
+    justify-content: baseline;
   }
 }
 
 .form__item + .form__item {
-  margin-top: rem(24);
+  margin-top: rem(22);
 }
 
 .form__item dt {
@@ -36,7 +37,7 @@
   color: $white;
   font-size: rem(12);
   font-weight: $normal;
-  padding: rem(2) rem(16);
+  padding: rem(2) rem(18);
   margin-left: rem(8);
 }
 
@@ -66,6 +67,8 @@
   display: inline-flex;
   vertical-align: sub;
   cursor: pointer;
+  margin: initial;
+  margin-right: rem(10);
 }
 
 .form__item label {
@@ -87,7 +90,7 @@
   border: 1px solid $green2;
   width: 100%;
   font-size: rem(12);
-  padding-left: rem(8);
+  padding: rem(8);
 }
 
 ::placeholder {
@@ -95,11 +98,21 @@
 }
 
 .form__confirm {
-  max-width: 73%;
+  margin-top: rem(40);
+  @include mq('md') {
+    text-align: center;
+  }
+}
+
+.form__confirm label {
+  font-size: rem(14);
+  line-height: calc(22/14);
+}
+
+.form__confirm-inner {
+  max-width: 84%;
   width: 100%;
   margin: auto;
-  text-align: center;
-  margin-top: rem(40);
 }
 
 .form__confirm input[type=checkbox] {
@@ -122,14 +135,18 @@
   content: "";
   display: block;
   position: absolute;
-  border-bottom: rem(2) solid #C94800;/*チェックの太さ*/
-  border-left: rem(2) solid #C94800;/*チェックの太さ*/
+  border-bottom: rem(2.5) solid #C94800;/*チェックの太さ*/
+  border-left: rem(2.5) solid #C94800;/*チェックの太さ*/
   opacity: 0;/*チェック前は非表示*/
-  height: 6px;/*チェックの高さ*/
-  width: 11px;/*チェックの横幅*/
+  height: rem(4);/*チェックの高さ*/
+  width: rem(10);/*チェックの横幅*/
   top: 0;/*チェック時の位置調整*/
   left: 50%;/*チェック時の位置調整*/
-  transform: rotate(-45deg) translate(-50%, -50%);/*チェック時の位置調整*/
+  transform: rotate(-40deg) translate(-50%, -50%);/*チェック時の位置調整*/
+  @include mq('md') {
+    width: rem(9);
+    height: rem(5);
+  }
 }
 
 .form__confirm input[type=checkbox]::after {
@@ -153,5 +170,5 @@
 
 .form__btn {
   text-align: center;
-  margin-top: rem(24);
+  margin-top: rem(19);
 }

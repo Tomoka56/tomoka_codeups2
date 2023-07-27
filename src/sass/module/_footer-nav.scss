@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.sub-nav__items {
+.sub-nav__block {
   display: flex;
   justify-content: center;
   @include mq('md') {
@@ -36,7 +36,7 @@
   }
 }
 
-.sub-nav__block + .sub-nav__block {
+.sub-nav__items + .sub-nav__items {
   margin-top: rem(16);
 }
 

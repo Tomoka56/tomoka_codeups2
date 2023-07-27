@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.page-contact-error__message-wrap {
+  margin-top: rem(52);
+  @include mq('md') {
+    margin-top: rem(150);
+    text-align: center;
+  }
+}
+
+.page-contact-error__message {
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: 1.4;
+  color: #C94800;
+  max-width: 65%;
+  width: 100%;
+  margin: auto;
+// display: inline-block;
+}
+
+.page-contact-error__form {
+  margin-top: rem(38);
+  @include mq('md') {
+    margin-top: rem(23);
+  }
+}
+
+.form__item--error input[type=text],
+.form__item--error input[type=email],
+.form__item--error input[type=tel],
+.form__item--error select,
+.form__item--error textarea {
+  background-color: rgba(201, 72, 0, 0.2);
+  border: 1px solid #C94800;
+}
+::placeholder {
+  color: $white;
+}
