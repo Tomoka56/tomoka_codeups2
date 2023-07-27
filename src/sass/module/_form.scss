@@ -1,16 +1,17 @@
 @use "global" as *;
 
 .form__inner {
+  max-width: rem(520);
+  width: 100%;
+  margin: auto;
   @include mq('md') {
     max-width: rem(700);
-    width: 100%;
-    margin: auto;
   }
 }
 
 .form__item {
   padding-bottom: rem(24);
-  border-bottom: 1px dotted $green2;
+  border-bottom: rem(1) dashed $green2;
   @include mq('md') {
     padding-bottom: rem(41);
     display: flex;
@@ -85,6 +86,26 @@
   cursor: pointer;
 }
 
+.form__item--select {
+  position: relative;
+}
+
+.form__item--select::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 6px 0 6px;
+  border-color: $green2 transparent transparent transparent;
+  right: rem(10);
+  top: 53%;
+  @include mq('md') {
+    top: 33%;
+  }
+}
+
 .form__item textarea {
   display: block;
   border: 1px solid $green2;
@@ -104,16 +125,26 @@
   }
 }
 
+.form__confirm-inner {
+  max-width: 85%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.form__confirm-block {
+  margin-left: rem(8);
+  @include mq('md') {
+    margin-left: rem(16);
+  }
+}
+
 .form__confirm label {
   font-size: rem(14);
   line-height: calc(22/14);
 }
 
-.form__confirm-inner {
-  max-width: 84%;
-  width: 100%;
-  margin: auto;
-}
 
 .form__confirm input[type=checkbox] {
   display: block;
@@ -135,17 +166,19 @@
   content: "";
   display: block;
   position: absolute;
-  border-bottom: rem(2.5) solid #C94800;/*チェックの太さ*/
-  border-left: rem(2.5) solid #C94800;/*チェックの太さ*/
-  opacity: 0;/*チェック前は非表示*/
-  height: rem(4);/*チェックの高さ*/
-  width: rem(10);/*チェックの横幅*/
-  top: 0;/*チェック時の位置調整*/
-  left: 50%;/*チェック時の位置調整*/
-  transform: rotate(-40deg) translate(-50%, -50%);/*チェック時の位置調整*/
+  border-bottom: rem(2.5) solid #C94800;
+  border-left: rem(2.5) solid #C94800;
+  opacity: 0;
+  height: rem(4);
+  width: rem(10);
+  top: 0;
+  left: 50%;
+  transform: rotate(-40deg) translateX(-50%);
   @include mq('md') {
     width: rem(9);
     height: rem(5);
+    top: rem(-1);
+    left: 40%;
   }
 }
 
@@ -153,14 +186,14 @@
   content: "";
   display: block;
   position: absolute;
-  border-bottom: rem(3) solid #C94800;/*チェックの太さ*/
-  border-left: rem(3) solid #C94800;/*チェックの太さ*/
-  opacity: 0;/*チェック前は非表示*/
-  height: rem(6);/*チェックの高さ*/
-  width: rem(10);/*チェックの横幅*/
-  top: 20%;/*チェック時の位置調整*/
-  left: 50%;/*チェック時の位置調整*/
-  transform: rotate(-45deg) translate(-50%, -50%);/*チェック時の位置調整*/
+  border-bottom: rem(3) solid #C94800;
+  border-left: rem(3) solid #C94800;
+  opacity: 0;
+  height: rem(6);
+  width: rem(10);
+  top: 20%;
+  left: 50%;
+  transform: rotate(-45deg) translate(-50%, -50%);
 }
 
 .form__item input[type=checkbox]:checked::after,

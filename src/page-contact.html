@@ -309,7 +309,7 @@
                     <label><input type="checkbox" name="checkbox" value="チェックボックス4"/>スペシャルダイビングについて</label>
                   </dd>
                 </div>
-                <div class="form__item">
+                <div class="form__item form__item--select">
                   <dt>キャンペーン</dt>
                   <dd>
                     <select name="select" class="">
@@ -329,8 +329,9 @@
             <div class="form__confirm">
               <div class="form__confirm-inner">
                 <input id="checkbox" class="form__checkbox" type="checkbox">
-                <label for="checkbox">個人情報の取り扱いについて同意のうえ
-                  送信します。</label>
+                <div class="form__confirm-block">
+                  <label for="checkbox">個人情報の取り扱いについて同意のうえ<br class="visible--sp">送信します。</label>
+                </div>
               </div>
             </div>
             <div class="form__btn">
