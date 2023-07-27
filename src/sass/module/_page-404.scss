@@ -1,0 +1,57 @@
+@use "global" as *;
+
+.page-404 {
+  background-color: $green2;
+  padding-top: rem(80);
+  padding-bottom: rem(40);
+  position: relative;
+  z-index: -10;
+  background-image: url(/assets/images/common/sea_icon.png);
+  background-repeat: no-repeat;
+  background-size: rem(345);
+  background-position: center;
+  @include mq('md') {
+    padding-top: rem(90);
+    padding-bottom: rem(148);
+    background-size: rem(700);
+    background-position-x: calc(50% - min(48%, rem(200)));
+    background-position-y: rem(158);
+  }
+}
+
+.page-404__breadcrumb .breadcrumb__item {
+  color: $white;
+}
+
+.page-404__contents {
+  text-align: center;
+  color: $white;
+  margin-top: rem(52);
+  @include mq('md') {
+    margin-top: rem(150);
+  }
+}
+
+.page-404__title {
+  font-size: rem(80);
+  font-family: $font-point1;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  @include mq('md') {
+    font-size: rem(160);
+  }
+}
+
+.page-404__text {
+  font-size: rem(16);
+  line-height: 2;
+}
+
+.page-404__btn {
+  text-align: center;
+  margin-top: rem(40);
+  padding-bottom: rem(4);
+  @include mq('md') {
+    margin-top: rem(80);
+  }
+}
