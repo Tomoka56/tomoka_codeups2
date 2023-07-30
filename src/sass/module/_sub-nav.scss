@@ -6,6 +6,11 @@
   width: 100%;
 }
 
+.sub-nav--black {
+  background-color: transparent;
+  color: $black;
+}
+
 .sub-nav__block {
   display: flex;
   justify-content: center;
@@ -17,14 +22,14 @@
 }
 
 .sub-nav__wrapper:first-child {
-  padding-left: rem(22);
+  padding-left: rem(20);
   @include mq('md') {
     padding-left: initial;
   }
 }
 
 .sub-nav__wrapper:nth-child(2) {
-  padding-left: rem(40);
+  padding-left: rem(50);
   @include mq('md') {
     padding-left: rem(138);
   }
@@ -36,7 +41,7 @@
   }
 }
 
-.sub-nav__items + .sub-nav__items {
+.sub-nav__items {
   margin-top: rem(16);
 }
 

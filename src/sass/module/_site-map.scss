@@ -20,15 +20,10 @@
 }
 
 .site-map__contents {
-  margin-top: rem(52);
+  margin-top: rem(24);
   @include mq('md') {
-    margin-top: rem(150);
+    margin-top: rem(120);
   }
-}
-
-.site-map__nav {
-  color: $black;
-  background-color: transparent;
 }
 
 .site-map__nav .sub-nav__link--icon::before {

@@ -13,16 +13,16 @@
     padding-top: rem(90);
     padding-bottom: rem(148);
     background-size: rem(700);
-    background-position-x: calc(50% - min(48%, rem(200)));
-    background-position-y: rem(158);
+    background-position-x: calc(50% - min(48%, rem(193)));
+    background-position-y: rem(92);
   }
 }
 
 .page-404__contents {
   text-align: center;
-  margin-top: rem(52);
+  margin-top: rem(40);
   @include mq('md') {
-    margin-top: rem(150);
+    margin-top: rem(95);
   }
 }
 
@@ -38,7 +38,7 @@
 
 .page-404__text {
   font-size: rem(16);
-  line-height: 2;
+  line-height: 1.5;
 }
 
 .page-404__btn {
