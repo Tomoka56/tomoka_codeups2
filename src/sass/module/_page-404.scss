@@ -4,12 +4,11 @@
   background-color: $green2;
   padding-top: rem(80);
   padding-bottom: rem(40);
-  position: relative;
-  z-index: -10;
   background-image: url(/assets/images/common/sea_icon.png);
   background-repeat: no-repeat;
   background-size: rem(345);
   background-position: center;
+  color: $white;
   @include mq('md') {
     padding-top: rem(90);
     padding-bottom: rem(148);
@@ -19,13 +18,8 @@
   }
 }
 
-.page-404__breadcrumb .breadcrumb__item {
-  color: $white;
-}
-
 .page-404__contents {
   text-align: center;
-  color: $white;
   margin-top: rem(52);
   @include mq('md') {
     margin-top: rem(150);

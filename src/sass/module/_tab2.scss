@@ -61,10 +61,26 @@
   display: none;
 }
 
-.tab2__item.is-active .tab2__img {
+.tab2__item.is-active .tab-icon1 {
   width: rem(64);
   height: rem(64);
   background-image: url(/assets/images/common/info-icon-white.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tab2__item.is-active .tab-icon2 {
+  width: rem(64);
+  height: rem(64);
+  background-image: url(/assets/images/common/info-icon-white2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tab2__item.is-active .tab-icon3 {
+  width: rem(64);
+  height: rem(64);
+  background-image: url(/assets/images/common/info-icon-white3.png);
   background-repeat: no-repeat;
   background-size: cover;
 }

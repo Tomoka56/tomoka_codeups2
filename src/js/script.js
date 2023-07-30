@@ -80,7 +80,7 @@ jQuery(function ($) {
         },
       });
       $('.js-header').addClass('color');
-    }, 4000); // 遅延時間
+    }, 4000); 
   });
   }
 })
@@ -91,8 +91,6 @@ $('.js-hamburger,.sp-nav__link').click(function() {
     $(".js-bar").toggleClass("is-active");
     $(".js-header").toggleClass("is-open");
     $(".js-drawer").toggleClass("is-open");
-    // $('body').toggleClass('is-hidden');
-    // $('html').toggleClass('is-fixed');
   });
 
 var flg = false;
@@ -101,10 +99,10 @@ var winPos;
 $('.js-hamburger,.sp-nav__link').on('click', function(){
 	if(flg == false) {
 		winPos = $(window).scrollTop();
-		$('body').addClass('is-fixed').css({'top': -winPos});
+		$('html').addClass('is-fixed').css({'top': -winPos});
 		flg = true;
 	} else {
-		$('body').removeClass('is-fixed').css({'top': 0});
+		$('html').removeClass('is-fixed').css({'top': 0});
 		window.scrollTo( 0 , winPos );
 		flg = false;
 	}
@@ -203,46 +201,36 @@ $(window).on("scroll", function() {
 
 
 // Aboutモーダル
-  // コース画像モーダル表示イベント
-  var scrollPos;//topからのスクロール位置
-  $(".js-photo").click(function () {
-    scrollPos = $(window).scrollTop();//topからのスクロール位置を格納
-    // まず、クリックした画像の HTML(<img>タグ全体)を#frayDisplay内にコピー
-    $(".js-overlay").html($(this).prop("outerHTML"));
-    //そして、fadeInで表示する。
-    $(".js-overlay").fadeIn(200);
-    $(".js-header, .js-page-top").hide();
-    $('body').addClass('is-fixed').css({ top: -scrollPos });
-    return false;
-  });
 
-  // コース画像モーダル非表示イベント
-  // モーダル画像背景 または 拡大画像そのものをクリックで発火
-  $(".js-overlay").click(function () {
-    // 非表示にする
-    $(".js-overlay").fadeOut(200);
+  // JavaScriptの部分
+let scrollPos;
+
+$(".js-photo").click(function () {
+  scrollPos = $(window).scrollTop();
+  $(".js-overlay").html($(this).prop("outerHTML"));
+  $(".js-overlay").fadeIn(200);
+  $(".js-header, .js-page-top").hide();
+  $('html').addClass('is-fixed');
+  return false;
+});
+
+$(".js-overlay").click(function () {
+  $(".js-overlay").fadeOut(200, function () {
     $(".js-header, .js-page-top").fadeIn();
-    $('body').removeClass('is-fixed').css({ top: 0 });//背景固定を解除
-		$(window).scrollTop(scrollPos);//元の位置までスクロール
-    return false;
+    $('html').removeClass('is-fixed');
+    $(window).scrollTop(scrollPos);
   });
-
-
+  return false;
+});
 
 
   // Informationタブメニュー
 $(function () {
-  // 最初のコンテンツは表示
   $(".js-content:first-of-type").css("display", "block");
-  // タブをクリックすると
   $(".js-tab").on("click", function () {
-    // 現在選択されているタブからcurrentを外す
     $(".is-active").removeClass("is-active");
-    // クリックされたタブにcurrentクラスを付与
     $(this).addClass("is-active");
-    // クリックされた要素が何番目か取得（クリックしたタブのインデックス番号を取得）
     const index = $(this).index();
-    // クリックしたタブのインデックス番号と同じコンテンツを表示
     $(".js-content").hide().eq(index).fadeIn(300);
   });
 });

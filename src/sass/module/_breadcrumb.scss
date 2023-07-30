@@ -1,20 +1,6 @@
 @use "global" as *;
 
 .breadcrumb {
-  position: relative;
-  z-index: -1;
   padding-top: rem(8);
-}
-
-.breadcrumb__items {
-  display: flex;
-  align-items: center;
-}
-
-.breadcrumb__item {
   font-size: rem(14);
-}
-
-.breadcrumb__item + .breadcrumb__item {
-  margin-left: rem(7);
 }

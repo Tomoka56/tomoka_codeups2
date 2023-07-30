@@ -1,5 +1,73 @@
 @use "global" as *;
 
+
+.wp-pagenavi {
+  text-align: center;
+  margin-top: rem(86);
+  color: $green2;
+}
+
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .page,
+.wp-pagenavi .current,
+.wp-pagenavi .nextpostslink {
+  border: 1px solid $green2;
+  padding: rem(8) rem(12);
+  margin: 0 rem(6);
+  font-family: $font-point1;
+  font-weight: $bold;
+}
+
+.wp-pagenavi .previouspostslink {
+  margin-right: rem(30);
+  margin-left: 0;
+  position: relative;
+}
+
+.wp-pagenavi .previouspostslink::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: rem(10);
+  width: rem(10);
+  height: rem(10);
+  border-top: 1px solid $green2;
+  border-left: 1px solid $green2;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.wp-pagenavi .current {
+  background-color: $green2;
+  color: $white;
+}
+
+.wp-pagenavi .nextpostslink {
+  margin-left: rem(30);
+  margin-right: 0;
+  position: relative;
+}
+
+.wp-pagenavi .nextpostslink::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  right: rem(10);
+  width: rem(10);
+  height: rem(10);
+  border-bottom: 1px solid $green2;
+  border-right: 1px solid $green2;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.wp-pagenavi .larger--pc {
+  display: none;
+  @include mq('md') {
+    display: inline-block;
+  }
+}
+
+
 .wp-pagenavi .previouspostslink:hover::after {
   border-top: 1px solid $white;
   border-left: 1px solid $white;

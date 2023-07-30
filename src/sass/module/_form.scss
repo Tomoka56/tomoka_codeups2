@@ -10,6 +10,7 @@
 }
 
 .form__item {
+    padding-top: rem(22);
   padding-bottom: rem(24);
   border-bottom: rem(1) dashed $green2;
   @include mq('md') {
@@ -20,9 +21,8 @@
   }
 }
 
-.form__item + .form__item {
-  margin-top: rem(22);
-}
+// .form__item + .form__item {
+// }
 
 .form__item dt {
   font-size: rem(16);
@@ -100,9 +100,9 @@
   border-width: 9px 6px 0 6px;
   border-color: $green2 transparent transparent transparent;
   right: rem(10);
-  top: 53%;
+  top: 60%;
   @include mq('md') {
-    top: 33%;
+    top: 45%;
   }
 }
 

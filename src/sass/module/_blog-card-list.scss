@@ -8,6 +8,13 @@
   }
 }
 
+.blog-card-list--2colums {
+  @include mq('md') {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(80);
+  }
+}
+
 .blog-card-list__item {
   max-width: rem(520);
   width: 100%;

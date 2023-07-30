@@ -40,9 +40,14 @@
     margin-top: rem(24);
     font-size: rem(16);
   }
-}
-
-.blog-detail {
+  img {
+    aspect-ratio: 345/231;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin-top: rem(24);
+  }
   ul {
     margin-top: rem(24);
   }
