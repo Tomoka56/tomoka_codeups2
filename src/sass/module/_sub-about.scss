@@ -36,6 +36,15 @@
   }
 }
 
+.sub-about__contents-inner {
+  max-width: rem(520);
+  width: 100%;
+  margin: auto;
+  @include mq('md') {
+    max-width: initial;
+  }
+}
+
 .sub-about__gallery {
   margin-top: rem(59);
   @include mq('md') {
