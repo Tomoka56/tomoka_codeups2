@@ -114,7 +114,7 @@
 .about-content__title--sub {
   position: absolute;
   top: rem(24);
-  left: calc(50% - min(48%, rem(220)));
+  left: calc(50% - min(48%, rem(148)));
   color: $white;
   @include mq('md') {
     position: initial;

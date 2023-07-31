@@ -9,9 +9,35 @@
   cursor: pointer;
 }
 
+summary,
+summary::-webkit-details-marker {
+  list-style-type: none;
+  position: relative;
+  padding-left: rem(28);
+  margin-left: rem(3);
+}
+
+summary::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: rem(10) 0 rem(10) rem(16);
+  border-color: transparent transparent transparent $green2;
+  left: 0;
+  top: 35%;
+  transition: transform 0.2s ease-in;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
 .archive-list__month {
-  margin-left: rem(20);
-  padding-left: rem(16);
+  margin-left: rem(28);
+  padding-left: rem(28);
   position: relative;
 }
 
@@ -22,7 +48,7 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: rem(8) 0 rem(8) rem(12);
+  border-width: rem(10) 0 rem(10) rem(16);
   border-color: transparent transparent transparent $green2;
   left: 0;
   top: 50%;

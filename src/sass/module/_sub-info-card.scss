@@ -7,8 +7,11 @@
   padding-bottom: rem(24);
   border: 1px solid $green2;
   display: none;
+  max-width: rem(520);
+  width: 100%;
+  margin: auto;
   @include mq('md') {
-    margin-top: rem(24);
+    max-width: initial;
   }
 }
 

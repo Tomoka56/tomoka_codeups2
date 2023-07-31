@@ -28,6 +28,7 @@
 }
 
 .sub-blog-card__date {
+  display: block;
   font-size: rem(12);
   font-family: $second-font;
   font-weight: $normal;
@@ -42,4 +43,5 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  margin-top: rem(3);
 }

@@ -19,7 +19,7 @@
   @include mq('md') {
     width: rem(301);
     height: rem(138);
-    top: rem(-40);
+    top: rem(-34);
     right: calc(50% - min(48%, rem(670)));
   }
 }
@@ -122,7 +122,7 @@
 }
 
 .contact__cta {
-  margin-top: rem(20);
+  margin-top: rem(24);
   @include mq('md') {
     margin-top: initial;
     margin-left: rem(84);
@@ -157,7 +157,7 @@
   line-height: calc(18/14);
   color: $green2;
   text-align: center;
-  margin-top: rem(14);
+  margin-top: rem(11);
   @include mq('md') {
     margin-top: rem(10);
   }

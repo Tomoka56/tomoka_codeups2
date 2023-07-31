@@ -64,9 +64,9 @@
 }
 
 .footer__nav {
-  margin-top: rem(28);
+  margin-top: rem(12);
   @include mq('md') {
-    margin-top: rem(13);
+    margin-top: rem(-4);
   }
 }
 
