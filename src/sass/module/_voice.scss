@@ -38,12 +38,8 @@
 }
 
 .voice__contents {
-  display: grid;
-  row-gap: rem(40);
   margin-top: rem(42);
   @include mq('md') {
-    column-gap: rem(40);
-    grid-template-columns: 1fr 1fr;
     margin-top: rem(28);
   }
 }

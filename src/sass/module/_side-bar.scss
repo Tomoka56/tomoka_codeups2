@@ -1,8 +1,6 @@
 @use "global" as *;
 
 .side-bar__items {
-  // display: grid;
-  // gap: rem(40);
   margin-top: rem(24);
 }
 
@@ -16,7 +14,7 @@
   display: block;
   content: "";
   position: absolute;
-  width: rem(6);
+  width: rem(8);
   height: rem(50);
   background-color: $green2;
   left: 0;

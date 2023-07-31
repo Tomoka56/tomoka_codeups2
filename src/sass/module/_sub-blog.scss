@@ -27,12 +27,15 @@
 .sub-blog__inner {
   position: relative;
   z-index: -1;
+  @include mq('md') {
+    padding-right: rem(15);
+  }
 }
 
 .sub-blog__container {
   margin-top: rem(46);
   @include mq('md') {
-    margin-top: rem(150);
+    margin-top: rem(144);
     display: flex;
     justify-content: center;
   }
@@ -66,5 +69,26 @@
   @include mq('md') {
     max-width: rem(294);
     padding: initial;
+  }
+}
+
+.sub-blog__pagenavi .wp-pagenavi {
+  margin-top: rem(40);
+  @include mq('md') {
+    margin-top: rem(99);
+  }
+}
+
+.sub-blog__pagenavi .wp-pagenavi .previouspostslink {
+  margin-right: rem(40);
+  @include mq('md') {
+    margin-right: rem(50);
+  }
+}
+
+.sub-blog__pagenavi .wp-pagenavi .nextpostslink {
+  margin-left: rem(40);
+  @include mq('md') {
+    margin-left: rem(50);
   }
 }
