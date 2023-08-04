@@ -3,6 +3,7 @@
 .faq-item__term {
   padding: rem(15) rem(16);
   background-color: $green2;
+  position: relative;
   @include mq('md') {
     padding: rem(25) rem(40);
     cursor: pointer;
@@ -15,13 +16,14 @@
   color: $white;
   position: relative;
   z-index: 1;
+  width: 90%;
   @include mq('md') {
     font-size: rem(20);
   }
 }
 
-.faq-item__title::before,
-.faq-item__title::after {
+.faq-item__term::before,
+.faq-item__term::after {
   content: "";
   display: block;
   position: absolute;
@@ -34,28 +36,29 @@
   }
 }
 
-.faq-item__title::before {
-  right: 0;
+.faq-item__term::before {
+  right: rem(16);
   top: 50%;
   transform: translateY(-50%);
 }
 
-.faq-item__title::after {
-  // opacity: 0;
-  right: 0;
+.faq-item__term::after {
+  right: rem(16);
   top: 50%;
   transform: translateY(-50%) rotate(0);
   transition: transform 0.3s ease-in-out;
 }
 
-.faq-item__term.is-close .faq-item__title::after {
+.faq-item__term.is-close::after {
   opacity: 1;
-  right: 0;
+  right: rem(16);
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
   transition: transform 0.3s ease-in-out;
+  @include mq('md') {
+    right: rem(40);
+  }
 }
-
 
 .faq-item__description {
   border: 1px solid $green2;
